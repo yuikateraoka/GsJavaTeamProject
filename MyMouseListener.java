@@ -9,6 +9,8 @@ import java.awt.event.*;
  */
 public class MyMouseListener extends MouseAdapter implements MouseListener
 {   
+    //MyMouseFrame mf = new MyMouseFrame();
+    //JLabel la = mf.getLabel();
     public void mouseClicked(MouseEvent e){}
     
     public void mouseEntered(MouseEvent e){
