@@ -13,15 +13,17 @@ public class MyMouseFrame  extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(300,300);
         
-        la = new JLabel("No MouseEvent");
+        
+        //la = ml.getLabel();
         JPanel jp = new JPanel();
+        la = new JLabel("No Mouse Event");
         jp.add(la);
-        jp.addMouseListener(new MyMouseListener());
+        jp.addMouseListener(new MyMouseListener(la));
+        jp.addMouseMotionListener(new MyMouseListener(la));
         this.add(jp);
+        
         setVisible(true);
 
     }
-    public JLabel getLabel(){
-        return la;
-    }
+    
 }

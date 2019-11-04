@@ -10,32 +10,41 @@ import java.awt.event.*;
 public class MyMouseListener extends MouseAdapter implements MouseListener
 {   
     //MyMouseFrame mf = new MyMouseFrame();
-    //JLabel la = mf.getLabel();
+    public JLabel la;
+    public MyMouseListener(JLabel la){
+        this.la = la;
+    }
+
     public void mouseClicked(MouseEvent e){}
-    
+
     public void mouseEntered(MouseEvent e){
-        Component c = (Component)e.getSource();
+        JPanel c = (JPanel)e.getSource();
+        la.setText("hello");
         c.setBackground(Color.CYAN);
     }
-    
+
     public void mouseExited(MouseEvent e){
         Component c = (Component)e.getSource();
         c.setBackground(Color.YELLOW);
     }
-    
+
     public void mousePressed(MouseEvent e){
-        la.setText("MousePredded (" + e.getX() + ", " + e.getY() + ")");
+        la.setText("MousePressed (" + e.getX() + ", " + e.getY() + ")");
     }
-    
-    public void mouseReleasd(MouseEvent e){
-        la.setText("MouseReleasd (" + e.getX() + ", " + e.getY() + ")");
+
+    public void mouseReleased(MouseEvent e){
+        la.setText("MouseReleased (" + e.getX() + ", " + e.getY() + ")");
     }
-    
+
     public void mouseDragged(MouseEvent e){
         la.setText("MouseDragged (" + e.getX() + ", " + e.getY() + ")");
     }
-    
+
     public void mouseMoved(MouseEvent e){
         la.setText("MouseMoved (" + e.getX() + ", " + e.getY() + ")");
+    }
+
+    public JLabel getLabel(){
+        return la;
     }
 }
